@@ -1,0 +1,1311 @@
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Mohammed Younes Aboushewil</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #3b82f6;
+            --accent-color: #60a5fa;
+            --dark-color: #1e3a8a;
+            --light-color: #eff6ff;
+            --text-color: #334155;
+            --bg-color: #f8fafc;
+            --card-bg: #ffffff;
+            --success-color: #10b981;
+            --glow-color: rgba(59, 130, 246, 0.5);
+        }
+        @media print {
+    body {
+        background: white;
+        color: black;
+    }
+    .profile-card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    .glow-button, .theme-switch {
+        display: none; /* Yazdırılmasını istemediğiniz öğeleri gizleyin */
+    }
+}
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: all 0.3s ease-in-out;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, transparent 20%, var(--bg-color) 70%);
+            z-index: -1;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: var(--primary-color);
+            opacity: 0.3;
+            animation: float 15s infinite linear;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .profile-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .profile-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--dark-color));
+            padding: 40px 20px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .profile-header::before {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            transform: rotate(45deg);
+            animation: shimmer 5s infinite linear;
+            z-index: 0;
+        }
+
+        @keyframes shimmer {
+            0% {
+                transform: translateX(-50%) translateY(-50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translateX(-50%) translateY(-50%) rotate(360deg);
+            }
+        }
+
+        .university-name {
+            display: flex;
+            flex: row;
+        }
+
+        .name-title {
+            position: relative;
+            z-index: 1;
+        }
+
+        .name-title h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            animation: fadeInDown 1s both;
+        }
+
+        .name-title p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            animation: fadeIn 1.5s both;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid white;
+            margin: 0 auto 20px;
+            object-fit: cover;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+            background-color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .profile-img i {
+            font-size: 80px;
+            color: var(--primary-color);
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0.7);
+            }
+
+            70% {
+                box-shadow: 0 0 0 15px rgba(37, 99, 235, 0);
+            }
+
+            100% {
+                box-shadow: 0 0 0 0 rgba(37, 99, 235, 0);
+            }
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 50px;
+            backdrop-filter: blur(5px);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-item i {
+            font-size: 1.2rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .section {
+            padding: 30px;
+            position: relative;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .section:last-child {
+            border-bottom: none;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h2 i {
+            font-size: 1.5rem;
+        }
+
+        .section h2::after {
+            content: "";
+            display: block;
+            height: 3px;
+            flex-grow: 1;
+            background: linear-gradient(90deg, var(--primary-color), transparent);
+            margin-left: 10px;
+        }
+
+        .education-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: rgba(239, 246, 255, 0.7);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .education-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .skill-category {
+            flex-basis: 100%;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+
+        .skill-tag {
+            background: var(--light-color);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .skill-tag::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            animation: shine 2s infinite;
+            animation-play-state: paused;
+        }
+
+        .skill-tag:hover::before {
+            animation-play-state: running;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s;
+        }
+
+        .project-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .project-content {
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .project-desc {
+            font-size: 0.9rem;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 8px 15px;
+            background: var(--light-color);
+            color: var(--primary-color);
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .project-link:hover {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .project-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            transition: all 0.3s;
+        }
+
+        .project-card:hover .project-icon {
+            transform: rotate(15deg);
+            opacity: 0.3;
+        }
+
+        .exp-cert-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .experience-item,
+        .certificate-item {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .experience-item:hover,
+        .certificate-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .experience-item::after,
+        .certificate-item::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, transparent 50%, var(--primary-color) 50%);
+        }
+
+        .lang-social-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .language-item,
+        .social-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .language-item:hover,
+        .social-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .language-icon,
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-color);
+            color: var(--primary-color);
+            border-radius: 50%;
+            font-size: 1.2rem;
+        }
+
+        .language-details,
+        .social-details {
+            flex-grow: 1;
+        }
+
+        .language-name,
+        .social-name {
+            font-weight: bold;
+            color: var(--dark-color);
+        }
+
+        .social-desc {
+            font-size: 0.9rem;
+            color: var(--text-color);
+        }
+
+        .social-link {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text-color);
+            font-size: 0.9rem;
+        }
+
+        .glow-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+            outline: none;
+        }
+
+        .glow-button:hover {
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.6);
+            transform: translateY(-3px);
+        }
+
+        .glow-button::after {
+            content: "";
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            transform: rotate(45deg);
+            transition: all 0.3s;
+        }
+
+        .glow-button:hover::after {
+            transform: rotate(45deg) scale(1.1);
+        }
+
+        /* Theme Switch */
+        .theme-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+            width: 60px;
+            height: 30px;
+            background: var(--card-bg);
+            border-radius: 30px;
+            padding: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .theme-switch-slider {
+            position: relative;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--primary-color);
+            transition: all 0.3s;
+            transform: translateX(0);
+        }
+
+        .dark-mode {
+            --primary-color: #60a5fa;
+            --secondary-color: #3b82f6;
+            --accent-color: #2563eb;
+            --dark-color: #1e40af;
+            --light-color: #1e293b;
+            --text-color: #e2e8f0;
+            --bg-color: #0f172a;
+            --card-bg: #1e293b;
+            --success-color: #10b981;
+            --glow-color: rgba(96, 165, 250, 0.5);
+        }
+
+        .dark-mode .theme-switch-slider {
+            transform: translateX(30px);
+        }
+
+        /* Loading Animation */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            transition: opacity 0.5s ease-out;
+            opacity: 0;
+            visibility: hidden;
+        }
+
+        .loading-spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(59, 130, 246, 0.3);
+            border-top: 5px solid var(--primary-color);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+
+            .projects-container,
+            .exp-cert-container,
+            .lang-social-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .profile-header {
+                padding: 30px 15px;
+            }
+
+            .name-title h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 20px;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            animation: fadeIn 1s forwards;
+            opacity: 0;
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1s forwards;
+            opacity: 0;
+        }
+
+        .fade-in-left {
+            animation: fadeInLeft 1s forwards;
+            opacity: 0;
+        }
+
+        .fade-in-right {
+            animation: fadeInRight 1s forwards;
+            opacity: 0;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+
+<body class="">
+    <!-- Yükleme animasyonu gizli başlayacak -->
+    <div class="loading-overlay" style="opacity: 0; visibility: hidden;">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="particles" id="particles">
+        <div class="particle"
+            style="width: 6.83617px; height: 6.83617px; left: 7.90507%; top: 41.9321%; animation-duration: 6.79284s;">
+        </div>
+        <div class="particle"
+            style="width: 12.4895px; height: 12.4895px; left: 11.8427%; top: 46.9089%; animation-duration: 10.5049s;">
+        </div>
+        <div class="particle"
+            style="width: 9.03145px; height: 9.03145px; left: 89.1391%; top: 90.6691%; animation-duration: 10.1671s;">
+        </div>
+        <div class="particle"
+            style="width: 9.11716px; height: 9.11716px; left: 34.3608%; top: 65.1487%; animation-duration: 7.68563s;">
+        </div>
+        <div class="particle"
+            style="width: 9.19944px; height: 9.19944px; left: 88.6073%; top: 77.7232%; animation-duration: 12.2943s;">
+        </div>
+        <div class="particle"
+            style="width: 14.7612px; height: 14.7612px; left: 18.9725%; top: 18.5006%; animation-duration: 8.59766s;">
+        </div>
+        <div class="particle"
+            style="width: 5.12302px; height: 5.12302px; left: 5.77375%; top: 81.3864%; animation-duration: 6.25561s;">
+        </div>
+        <div class="particle"
+            style="width: 6.29776px; height: 6.29776px; left: 23.2333%; top: 49.7603%; animation-duration: 13.3326s;">
+        </div>
+        <div class="particle"
+            style="width: 7.1895px; height: 7.1895px; left: 45.6736%; top: 89.5344%; animation-duration: 11.6192s;">
+        </div>
+        <div class="particle"
+            style="width: 13.1755px; height: 13.1755px; left: 22.9535%; top: 44.9661%; animation-duration: 10.3938s;">
+        </div>
+        <div class="particle"
+            style="width: 9.11748px; height: 9.11748px; left: 89.9456%; top: 62.1881%; animation-duration: 8.4127s;">
+        </div>
+        <div class="particle"
+            style="width: 11.0206px; height: 11.0206px; left: 55.0616%; top: 29.2465%; animation-duration: 9.77992s;">
+        </div>
+        <div class="particle"
+            style="width: 9.03145px; height: 9.03145px; left: 16.8066%; top: 7.65655%; animation-duration: 5.83616s;">
+        </div>
+        <div class="particle"
+            style="width: 9.02422px; height: 9.02422px; left: 99.5757%; top: 47%; animation-duration: 12.5459s;"></div>
+        <div class="particle"
+            style="width: 14.7352px; height: 14.7352px; left: 14.5647%; top: 92.5098%; animation-duration: 8.36829s;">
+        </div>
+        <div class="particle"
+            style="width: 5.50416px; height: 5.50416px; left: 60.2885%; top: 92.8766%; animation-duration: 12.1258s;">
+        </div>
+        <div class="particle"
+            style="width: 9.20881px; height: 9.20881px; left: 51.5249%; top: 48.4348%; animation-duration: 13.1122s;">
+        </div>
+        <div class="particle"
+            style="width: 10.979px; height: 10.979px; left: 91.5777%; top: 15.1925%; animation-duration: 12.3228s;">
+        </div>
+        <div class="particle"
+            style="width: 14.7459px; height: 14.7459px; left: 60.7396%; top: 87.3238%; animation-duration: 14.7125s;">
+        </div>
+        <div class="particle"
+            style="width: 7.85829px; height: 7.85829px; left: 13.49%; top: 26.0791%; animation-duration: 10.2289s;">
+        </div>
+        <div class="particle"
+            style="width: 13.5255px; height: 13.5255px; left: 58.1073%; top: 50.4719%; animation-duration: 8.33434s;">
+        </div>
+        <div class="particle"
+            style="width: 8.82618px; height: 8.82618px; left: 86.6206%; top: 77.5956%; animation-duration: 12.9884s;">
+        </div>
+        <div class="particle"
+            style="width: 6.13546px; height: 6.13546px; left: 10.927%; top: 6.61672%; animation-duration: 9.00322s;">
+        </div>
+        <div class="particle"
+            style="width: 11.0472px; height: 11.0472px; left: 76.3155%; top: 16.9494%; animation-duration: 10.9692s;">
+        </div>
+        <div class="particle"
+            style="width: 9.18184px; height: 9.18184px; left: 85.6884%; top: 54.3663%; animation-duration: 6.56183s;">
+        </div>
+        <div class="particle"
+            style="width: 8.30289px; height: 8.30289px; left: 5.53361%; top: 62.0988%; animation-duration: 10.6855s;">
+        </div>
+        <div class="particle"
+            style="width: 10.3838px; height: 10.3838px; left: 37.0945%; top: 19.6618%; animation-duration: 7.7449s;">
+        </div>
+        <div class="particle"
+            style="width: 6.82015px; height: 6.82015px; left: 54.3748%; top: 49.3283%; animation-duration: 11.4187s;">
+        </div>
+        <div class="particle"
+            style="width: 12.3302px; height: 12.3302px; left: 65.6055%; top: 39.2218%; animation-duration: 8.50183s;">
+        </div>
+        <div class="particle"
+            style="width: 13.3046px; height: 13.3046px; left: 49.2052%; top: 65.9232%; animation-duration: 9.69544s;">
+        </div>
+        <div class="particle"
+            style="width: 14.1222px; height: 14.1222px; left: 32.9342%; top: 80.4888%; animation-duration: 12.8131s;">
+        </div>
+        <div class="particle"
+            style="width: 13.9431px; height: 13.9431px; left: 74.4942%; top: 17.6974%; animation-duration: 13.403s;">
+        </div>
+        <div class="particle"
+            style="width: 10.1059px; height: 10.1059px; left: 12.9922%; top: 72.2907%; animation-duration: 13.2454s;">
+        </div>
+        <div class="particle"
+            style="width: 8.92708px; height: 8.92708px; left: 92.7842%; top: 55.3946%; animation-duration: 13.5415s;">
+        </div>
+        <div class="particle"
+            style="width: 7.7008px; height: 7.7008px; left: 82.8443%; top: 81.7015%; animation-duration: 6.82496s;">
+        </div>
+        <div class="particle"
+            style="width: 8.77997px; height: 8.77997px; left: 55.0896%; top: 88.7428%; animation-duration: 5.48024s;">
+        </div>
+        <div class="particle"
+            style="width: 6.5433px; height: 6.5433px; left: 0.70677%; top: 24.2993%; animation-duration: 14.6886s;">
+        </div>
+        <div class="particle"
+            style="width: 13.0182px; height: 13.0182px; left: 75.9026%; top: 83.6866%; animation-duration: 13.7845s;">
+        </div>
+        <div class="particle"
+            style="width: 13.1141px; height: 13.1141px; left: 70.6911%; top: 72.2831%; animation-duration: 14.9945s;">
+        </div>
+        <div class="particle"
+            style="width: 13.3351px; height: 13.3351px; left: 14.174%; top: 10.1957%; animation-duration: 7.4825s;">
+        </div>
+        <div class="particle"
+            style="width: 12.8242px; height: 12.8242px; left: 18.1949%; top: 71.3339%; animation-duration: 6.45665s;">
+        </div>
+        <div class="particle"
+            style="width: 10.7095px; height: 10.7095px; left: 70.5669%; top: 80.8889%; animation-duration: 11.2801s;">
+        </div>
+        <div class="particle"
+            style="width: 13.8147px; height: 13.8147px; left: 1.49533%; top: 50.3675%; animation-duration: 6.7097s;">
+        </div>
+        <div class="particle"
+            style="width: 11.0719px; height: 11.0719px; left: 62.2664%; top: 44.6035%; animation-duration: 7.81166s;">
+        </div>
+        <div class="particle"
+            style="width: 6.90657px; height: 6.90657px; left: 69.1911%; top: 50.0998%; animation-duration: 12.2551s;">
+        </div>
+        <div class="particle"
+            style="width: 14.1412px; height: 14.1412px; left: 34.6993%; top: 69.2856%; animation-duration: 13.729s;">
+        </div>
+        <div class="particle"
+            style="width: 11.9706px; height: 11.9706px; left: 50.8261%; top: 43.2468%; animation-duration: 14.6074s;">
+        </div>
+        <div class="particle"
+            style="width: 8.48436px; height: 8.48436px; left: 3.24728%; top: 61.8674%; animation-duration: 12.8709s;">
+        </div>
+        <div class="particle"
+            style="width: 14.4106px; height: 14.4106px; left: 28.1357%; top: 96.5419%; animation-duration: 10.7976s;">
+        </div>
+        <div class="particle"
+            style="width: 8.38065px; height: 8.38065px; left: 91.9592%; top: 53.7176%; animation-duration: 13.089s;">
+        </div>
+        <div class="particle"
+            style="width: 10.0331px; height: 10.0331px; left: 32.1898%; top: 39.4733%; animation-duration: 8.91511s;">
+        </div>
+        <div class="particle"
+            style="width: 10.0805px; height: 10.0805px; left: 8.77042%; top: 74.5947%; animation-duration: 5.02588s;">
+        </div>
+        <div class="particle"
+            style="width: 5.43289px; height: 5.43289px; left: 74.0958%; top: 47.5588%; animation-duration: 5.17649s;">
+        </div>
+        <div class="particle"
+            style="width: 5.43783px; height: 5.43783px; left: 49.8662%; top: 26.0225%; animation-duration: 11.1357s;">
+        </div>
+        <div class="particle"
+            style="width: 8.75746px; height: 8.75746px; left: 71.1143%; top: 82.4706%; animation-duration: 13.6244s;">
+        </div>
+        <div class="particle"
+            style="width: 6.38735px; height: 6.38735px; left: 22.4845%; top: 16.1367%; animation-duration: 14.0468s;">
+        </div>
+        <div class="particle"
+            style="width: 14.0964px; height: 14.0964px; left: 67.7955%; top: 23.0462%; animation-duration: 10.5541s;">
+        </div>
+        <div class="particle"
+            style="width: 7.24935px; height: 7.24935px; left: 40.8667%; top: 8.9286%; animation-duration: 9.86004s;">
+        </div>
+        <div class="particle"
+            style="width: 13.5747px; height: 13.5747px; left: 61.6783%; top: 72.1309%; animation-duration: 13.3509s;">
+        </div>
+        <div class="particle"
+            style="width: 7.45562px; height: 7.45562px; left: 28.3865%; top: 47.945%; animation-duration: 6.99854s;">
+        </div>
+        <div class="particle"
+            style="width: 6.5585px; height: 6.5585px; left: 30.1424%; top: 98.8651%; animation-duration: 7.68188s;">
+        </div>
+        <div class="particle"
+            style="width: 14.8805px; height: 14.8805px; left: 22.9194%; top: 7.11343%; animation-duration: 14.5586s;">
+        </div>
+        <div class="particle"
+            style="width: 8.68435px; height: 8.68435px; left: 3.5942%; top: 73.1264%; animation-duration: 12.7957s;">
+        </div>
+        <div class="particle"
+            style="width: 12.9468px; height: 12.9468px; left: 24.7966%; top: 98.1731%; animation-duration: 11.2033s;">
+        </div>
+        <div class="particle"
+            style="width: 11.1068px; height: 11.1068px; left: 66.6659%; top: 4.01258%; animation-duration: 6.15555s;">
+        </div>
+        <div class="particle"
+            style="width: 10.4654px; height: 10.4654px; left: 20.0727%; top: 18.719%; animation-duration: 10.4715s;">
+        </div>
+        <div class="particle"
+            style="width: 9.42138px; height: 9.42138px; left: 16.222%; top: 83.2642%; animation-duration: 12.7493s;">
+        </div>
+        <div class="particle"
+            style="width: 12.2609px; height: 12.2609px; left: 38.2814%; top: 60.5368%; animation-duration: 14.7139s;">
+        </div>
+        <div class="particle"
+            style="width: 6.71316px; height: 6.71316px; left: 6.71951%; top: 8.15937%; animation-duration: 8.08228s;">
+        </div>
+        <div class="particle"
+            style="width: 14.8916px; height: 14.8916px; left: 25.9532%; top: 36.8944%; animation-duration: 8.01316s;">
+        </div>
+        <div class="particle"
+            style="width: 13.6742px; height: 13.6742px; left: 27.3188%; top: 33.0903%; animation-duration: 5.38575s;">
+        </div>
+        <div class="particle"
+            style="width: 11.9831px; height: 11.9831px; left: 88.3515%; top: 65.5866%; animation-duration: 9.56484s;">
+        </div>
+        <div class="particle"
+            style="width: 13.916px; height: 13.916px; left: 12.6782%; top: 19.7486%; animation-duration: 10.4772s;">
+        </div>
+        <div class="particle"
+            style="width: 5.60756px; height: 5.60756px; left: 11.4837%; top: 22.9597%; animation-duration: 11.3198s;">
+        </div>
+        <div class="particle"
+            style="width: 13.1547px; height: 13.1547px; left: 20.103%; top: 62.2113%; animation-duration: 13.1452s;">
+        </div>
+        <div class="particle"
+            style="width: 6.95457px; height: 6.95457px; left: 61.5769%; top: 25.4913%; animation-duration: 7.38235s;">
+        </div>
+        <div class="particle"
+            style="width: 12.275px; height: 12.275px; left: 72.3581%; top: 31.3646%; animation-duration: 14.0661s;">
+        </div>
+        <div class="particle"
+            style="width: 10.5447px; height: 10.5447px; left: 60.6228%; top: 15.7313%; animation-duration: 12.9095s;">
+        </div>
+        <div class="particle"
+            style="width: 9.97745px; height: 9.97745px; left: 34.2985%; top: 66.4894%; animation-duration: 7.89599s;">
+        </div>
+        <div class="particle"
+            style="width: 14.8466px; height: 14.8466px; left: 10.1893%; top: 10.8409%; animation-duration: 5.79718s;">
+        </div>
+        <div class="particle"
+            style="width: 13.8248px; height: 13.8248px; left: 39.7568%; top: 58.3031%; animation-duration: 14.3498s;">
+        </div>
+        <div class="particle"
+            style="width: 5.5952px; height: 5.5952px; left: 56.5068%; top: 8.47375%; animation-duration: 9.49821s;">
+        </div>
+        <div class="particle"
+            style="width: 12.6702px; height: 12.6702px; left: 56.3719%; top: 15.3856%; animation-duration: 5.19113s;">
+        </div>
+        <div class="particle"
+            style="width: 13.4267px; height: 13.4267px; left: 27.6935%; top: 15.5903%; animation-duration: 14.8715s;">
+        </div>
+        <div class="particle"
+            style="width: 12.9936px; height: 12.9936px; left: 83.2382%; top: 29.4291%; animation-duration: 10.1018s;">
+        </div>
+        <div class="particle"
+            style="width: 10.3012px; height: 10.3012px; left: 57.0886%; top: 62.916%; animation-duration: 12.6116s;">
+        </div>
+        <div class="particle"
+            style="width: 9.51419px; height: 9.51419px; left: 72.1404%; top: 69.2555%; animation-duration: 9.42728s;">
+        </div>
+        <div class="particle"
+            style="width: 10.9614px; height: 10.9614px; left: 87.2786%; top: 85.9547%; animation-duration: 8.43361s;">
+        </div>
+        <div class="particle"
+            style="width: 11.8688px; height: 11.8688px; left: 99.9974%; top: 13.3606%; animation-duration: 12.4215s;">
+        </div>
+        <div class="particle"
+            style="width: 7.10573px; height: 7.10573px; left: 32.088%; top: 99.8616%; animation-duration: 10.3417s;">
+        </div>
+        <div class="particle"
+            style="width: 7.59919px; height: 7.59919px; left: 32.7655%; top: 44.0546%; animation-duration: 14.5146s;">
+        </div>
+        <div class="particle"
+            style="width: 6.10901px; height: 6.10901px; left: 96.5897%; top: 15.4353%; animation-duration: 12.8219s;">
+        </div>
+        <div class="particle"
+            style="width: 5.9461px; height: 5.9461px; left: 79.1252%; top: 52.6273%; animation-duration: 12.3453s;">
+        </div>
+        <div class="particle"
+            style="width: 7.7366px; height: 7.7366px; left: 92.8126%; top: 72.2874%; animation-duration: 11.5394s;">
+        </div>
+        <div class="particle"
+            style="width: 5.13345px; height: 5.13345px; left: 73.043%; top: 10.9132%; animation-duration: 7.5205s;">
+        </div>
+        <div class="particle"
+            style="width: 10.2721px; height: 10.2721px; left: 75.9246%; top: 10.8735%; animation-duration: 14.8196s;">
+        </div>
+        <div class="particle"
+            style="width: 7.63444px; height: 7.63444px; left: 79.8245%; top: 84.4426%; animation-duration: 7.33198s;">
+        </div>
+        <div class="particle"
+            style="width: 7.66685px; height: 7.66685px; left: 49.9302%; top: 15.4122%; animation-duration: 5.09481s;">
+        </div>
+        <div class="particle"
+            style="width: 13.5092px; height: 13.5092px; left: 86.6744%; top: 74.1668%; animation-duration: 12.5951s;">
+        </div>
+        <div class="particle"
+            style="width: 9.92746px; height: 9.92746px; left: 83.8744%; top: 83.9062%; animation-duration: 9.27054s;">
+        </div>
+    </div>
+
+    <div class="theme-switch" id="themeSwitch">
+        <div class="theme-switch-slider"></div>
+    </div>
+
+    <div class="container">
+        <div class="profile-card fade-in" style="opacity: 1;">
+            <div class="profile-header">
+                <div class="profile-img">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="name-title">
+                    <h1>Mohammed Younes Aboushewil</h1>
+                    <p>Bilgisayar Mühendisliği Öğrencisi</p>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:mohammadyounes686@gmail.com">mohammadyounes686@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:05526405675">05526405675</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://www.linkedin.com/in/mohammed-younes-aboushewil-014526305/"
+                            target="_blank">LinkedIn</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/MYounesEG" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section fade-in-up" id="education" style="opacity: 1;">
+                <h2><i class="fas fa-graduation-cap"></i> Eğitim</h2>
+                <div class="education-item">
+                    <div class="university-name">
+                        <img style="width: 40px; margin-bottom: 10px;" alt="Kocaeli Üniversitesi" src="https://upload.wikimedia.org/wikipedia/tr/1/1a/Kouyenilogo.png">
+                        <h3>Kocaeli Üniversitesi</h3>
+
+                    </div>
+                    <p>Bilgisayar Mühendisliği</p>
+                    <p><em>2023 - Devam Ediyor</em></p>
+                </div>
+            </div>
+
+            <div class="section fade-in-up" id="skills" style="opacity: 1;">
+                <h2><i class="fas fa-code"></i> Beceriler</h2>
+
+                <div class="skills-container">
+                    <div class="skill-category">Programlama Dilleri</div>
+                    <div class="skill-tag"><i class="fab fa-python"></i> Python</div>
+                    <div class="skill-tag"><i class="fab fa-js-square"></i> JavaScript</div>
+                    <div class="skill-tag"><i class="fab fa-js-square"></i> TypeScript</div>
+                    <div class="skill-tag"><i class="fab fa-microsoft"></i> C#</div>
+                    <div class="skill-tag"><i class="fas fa-code"></i> C++</div>
+                    <div class="skill-tag"><i class="fas fa-code"></i> C</div>
+                    <div class="skill-tag"><i class="fab fa-java"></i> Java</div>
+                </div>
+
+                <div class="skills-container">
+                    <div class="skill-category">Web Teknolojileri</div>
+                    <div class="skill-tag"><i class="fab fa-html5"></i> HTML5</div>
+                    <div class="skill-tag"><i class="fab fa-css3-alt"></i> CSS3</div>
+                    <div class="skill-tag"><i class="fab fa-react"></i> React</div>
+                    <div class="skill-tag"><i class="fab fa-js-square"></i> Next.js</div>
+                    <div class="skill-tag"><i class="fab fa-python"></i> Django</div>
+                    <div class="skill-tag"><i class="fab fa-python"></i> Flask</div>
+                    <div class="skill-tag"><i class="fab fa-js-square"></i> D3.js</div>
+                </div>
+
+                <div class="skills-container">
+                    <div class="skill-category">Araçlar &amp; Diğer</div>
+                    <div class="skill-tag"><i class="fas fa-code"></i> VS Code</div>
+                    <div class="skill-tag"><i class="fab fa-github"></i> GitHub</div>
+                    <div class="skill-tag"><i class="fab fa-python"></i> Tkinter</div>
+                    <div class="skill-tag"><i class="fas fa-globe"></i> Web Geliştirme</div>
+                    <div class="skill-tag"><i class="fas fa-brain"></i> Yapay Zeka Temelleri</div>
+                    <div class="skill-tag"><i class="fas fa-users"></i> Takım Çalışması</div>
+                </div>
+            </div>
+
+            <div class="section fade-in-up" id="projects" style="opacity: 1;">
+                <h2><i class="fas fa-project-diagram"></i> Projeler</h2>
+                <div class="projects-container">
+                    <div class="project-card">
+                        <div class="project-content">
+                            <div class="project-title">Tic-Tac-Win</div>
+                            <div class="project-desc">Klasik Tic-tac-toe oyununun modern bir versiyonu.</div>
+                            <a href="https://github.com/MYounesEG/Tic-Tac-Win" class="project-link"
+                                target="_blank">GitHub <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <i class="fas fa-gamepad project-icon"></i>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-content">
+                            <div class="project-title">AuthorGraphAnalyzer</div>
+                            <div class="project-desc">Yazarlar arasındaki bağlantıları analiz eden gelişmiş bir araç.
+                            </div>
+                            <a href="https://github.com/MYounesEG/AuthorGraphAnalyzer" class="project-link"
+                                target="_blank">GitHub <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <i class="fas fa-network-wired project-icon"></i>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-content">
+                            <div class="project-title">DirViz</div>
+                            <div class="project-desc">Dizin yapısını görselleştiren kullanışlı bir araç.</div>
+                            <a href="https://github.com/MYounesEG/dirviz" class="project-link" target="_blank">GitHub <i
+                                    class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <i class="fas fa-folder-tree project-icon"></i>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-content">
+                            <div class="project-title">Web-Content-Sync</div>
+                            <div class="project-desc">Web içerik senkronizasyonu için geliştirilmiş bir araç.</div>
+                            <a href="https://github.com/MYounesEG/Web-Content-Sync" class="project-link"
+                                target="_blank">GitHub <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <i class="fas fa-sync project-icon"></i>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-content">
+                            <div class="project-title">Strategic Card Warfare</div>
+                            <div class="project-desc">Stratejik kart savaş oyunu.</div>
+                            <a href="https://github.com/MerveSevim44/Strategic-Card-Warfare" class="project-link"
+                                target="_blank">GitHub <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <i class="fas fa-dice project-icon"></i>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-content">
+                            <div class="project-title">HexaClash</div>
+                            <div class="project-desc">Hexagonal tabanlı strateji oyunu.</div>
+                            <a href="https://github.com/MYounesEG/HexaClash" class="project-link" target="_blank">GitHub
+                                <i class="fas fa-external-link-alt"></i></a>
+                        </div>
+                        <i class="fas fa-chess-board project-icon"></i>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="section fade-in-up" id="experience-certificates" style="opacity: 1;">
+                <h2><i class="fas fa-briefcase"></i> Deneyim &amp; Sertifikalar</h2>
+                <div class="exp-cert-container">
+                    <div class="experience-item">
+                        <h3>Spice Code Hackathon</h3>
+                        <p>Takım çalışması ile proje geliştirme deneyimi.</p>
+                        <a href="https://github.com/esrefdesign/Order-and-Go" class="social-link" target="_blank">Proje
+                            Bağlantısı <i class="fas fa-external-link-alt"></i></a>
+                    </div>
+
+                    <div class="certificate-item">
+                        <h3>Scientific Computing with Python</h3>
+                        <p>FreeCodeCamp</p>
+                        <a href="https://www.freecodecamp.org/certification/fcc7028e4b7-be42-4060-92bf-02c6bd06d0fd/scientific-computing-with-python-v7"
+                            class="social-link" target="_blank">Sertifikayı Görüntüle <i
+                                class="fas fa-certificate"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section fade-in-up" id="languages-social" style="opacity: 1;">
+                <h2><i class="fas fa-globe"></i> Diller &amp; Sosyal Aktiviteler</h2>
+                <div class="lang-social-container">
+                    <div class="language-item">
+                        <div class="language-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="language-details">
+                            <div class="language-name">Türkçe</div>
+
+                        </div>
+                    </div>
+
+                    <div class="language-item">
+                        <div class="language-icon">
+                            <i class="fas fa-language"></i>
+                        </div>
+                        <div class="language-details">
+                            <div class="language-name">İngilizce</div>
+
+                        </div>
+                    </div>
+
+                    <div class="social-item">
+                        <div class="social-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="social-name">Topluluk Etkinlikleri</div>
+                        <div class="social-desc">Çeşitli hackathonlar ve kodlama yarışmalarına katılım.</div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer fade-in" style="opacity: 1;">
+            <button class="glow-button" onclick="window.print()">CV'yi Yazdır</button>
+        </div>
+    </div>
+
+    <script>
+        // Temayı değiştirme işlevi
+        const themeSwitch = document.getElementById('themeSwitch');
+        themeSwitch.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Parçacık animasyonu
+        const particlesContainer = document.getElementById('particles');
+        const particleCount = 50;
+
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            particle.style.width = `${Math.random() * 10 + 5}px`;
+            particle.style.height = particle.style.width;
+            particle.style.left = `${Math.random() * 100}%`;
+            particle.style.top = `${Math.random() * 100}%`;
+            particle.style.animationDuration = `${Math.random() * 10 + 5}s`;
+            particlesContainer.appendChild(particle);
+        }
+
+        // Yükleme animasyonu
+        const loadingOverlay = document.querySelector('.loading-overlay');
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                loadingOverlay.style.opacity = '0';
+                loadingOverlay.style.visibility = 'hidden';
+            }, 500);
+        });
+
+        // Sayfa yüklendiğinde animasyonları tetikle
+        document.addEventListener('DOMContentLoaded', () => {
+            const fadeElements = document.querySelectorAll('.fade-in, .fade-in-up, .fade-in-left, .fade-in-right');
+            fadeElements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                }, index * 200);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
